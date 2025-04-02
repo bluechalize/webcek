@@ -1,0 +1,178 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    text-align: center;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+/* Gaya untuk logo */
+.logo {
+    width: 100px; /* Atur ukuran logo */
+    height: auto;
+    margin-bottom: 20px; /* Jarak antara logo dan judul */
+}
+
+/* Gaya header */
+header {
+    text-align: center; /* Pusatkan konten header */
+    margin-bottom: 30px; /* Jarak antara header dan konten utama */
+}
+/* Gaya untuk tombol */
+.actions {
+    display: flex;
+    gap: 10px; /* Jarak antara tombol */
+    margin-bottom: 20px; /* Jarak antara tombol dan tabel */
+}
+
+.actions button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Warna biru */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.actions button:hover {
+    background-color: #0056b3; /* Warna biru lebih gelap saat hover */
+}/* Styling tombol Dashboard */
+.btn-dashboard {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Warna biru */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-right: 10px; /* Jarak antara tombol */
+}
+
+.btn-dashboard:hover {
+    background-color: #0056b3; /* Warna biru lebih gelap saat dihover */
+}
+
+/* Styling tombol Kembali ke Halaman Utama */
+.btn-back {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6c757d; /* Warna abu-abu */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-back:hover {
+    background-color: #5a6268; /* Warna abu-abu lebih gelap saat dihover */
+}/* Styling tombol Export CSV */
+.btn-export {
+    display: inline-block; /* Menjadikan elemen inline-block agar bisa diberi padding dan margin */
+    padding: 10px 20px; /* Padding untuk membuat tombol lebih besar */
+    background-color: #28a745; /* Warna hijau untuk tombol export */
+    color: white; /* Warna teks putih agar kontras dengan latar belakang */
+    text-decoration: none; /* Menghilangkan garis bawah jika menggunakan tag <a> */
+    border-radius: 5px; /* Memberikan sudut melengkung pada tombol */
+    font-weight: bold; /* Membuat teks lebih tebal */
+    margin-right: 10px; /* Jarak antara tombol lainnya */
+    transition: background-color 0.3s ease; /* Efek transisi saat hover */
+}
+
+/* Efek hover untuk tombol Export CSV */
+.btn-export:hover {
+    background-color: #218838; /* Warna hijau lebih gelap saat dihover */
+    cursor: pointer; /* Mengubah kursor menjadi pointer saat dihover */
+}
+}
+/* Styling tombol Cetak */
+.btn-print {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #17a2b8; /* Warna biru muda */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-right: 10px; /* Jarak antara tombol */
+    transition: background-color 0.3s ease;
+    border: none; /* Menghilangkan border default */
+    cursor: pointer; /* Mengubah kursor menjadi pointer */
+}
+
+/* Efek hover untuk tombol Cetak */
+.btn-print:hover {
+    background-color: #138496; /* Warna biru lebih gelap saat dihover */
+}
+/* Styling tombol Logout */
+.btn-logout {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #dc3545; /* Warna merah */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+/* Efek hover untuk tombol Logout */
+.btn-logout:hover {
+    background-color: #c82333; /* Warna merah lebih gelap saat dihover */
+}

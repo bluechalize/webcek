@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Analisis Situs Web</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script> <!-- Tambahkan plugin datalabels -->
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+	<!-- Logo -->
+        <div style="text-align: center; margin-bottom: 20px;">
+            <img src="/logo.png" alt="Logo Aplikasi" width="100">
+        </div>
+        <!-- Tombol Kembali ke Halaman Utama -->
+        <div style="margin-bottom: 20px;">
+            <a href="/" class="btn-back">Ke Halaman Utama</a>
+        </div>
+    <div class="container">
+        <h1>Diagram Analisis Situs Web</h1>
+
+        <!-- Diagram Aktif vs Tidak Aktif -->
+        <div style="margin-bottom: 30px;">
+            <h2>Hasil Web Checking</h2>
+            <canvas id="statusChart" width="400" height="200"></canvas>
+        </div>
+
+       
+
+    <script>
+        // Diagram Aktif vs Tidak Aktif
+        const statusCtx = document.getElementById('statusChart').getContext('2d');
+        const activeCount = <%= activeCount %>; // Jumlah situs aktif
+        const inactiveCount = <%= inactiveCount %>; // Jumlah situs tidak aktif
+
+        const statusChart = new Chart(statusCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Aktif', 'Tidak Aktif'],
+                datasets: [{
+                    data: [activeCount, inactiveCount],
+                    backgroundColor: ['#4CAF50', '#F44336']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Status Situs Web'
+                    },
+                    datalabels: { // Menampilkan jumlah di setiap bagian
+                        color: '#fff',
+                        font: {
+                            weight: 'bold',
+                            size: 14
+                        },
+                        formatter: (value) => value > 0 ? value : '' // Hanya tampilkan jika nilai > 0
+                    }
+                }
+            },
+            plugins: [ChartDataLabels] // Aktifkan plugin datalabels
+        });
+
+
+    </script>
+</body>
+</html>

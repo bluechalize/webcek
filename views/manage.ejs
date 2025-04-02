@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelola URL</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kelola URL</h1>
+        <form action="/add-url" method="POST">
+            <label for="url">Tambahkan URL:</label><br>
+            <input type="text" id="url" name="url" placeholder="contoh.com" required><br><br>
+            <button type="submit">Tambahkan</button>
+        </form>
+
+        <h2>Daftar URL</h2>
+        <% if (websites.length > 0) { %>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>URL</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% websites.forEach(website => { %>
+                        <tr>
+                            <td><%= website.id %></td>
+                            <td><%= website.url %></td>
+                            <td>
+                                <form action="/delete-url/<%= website.id %>" method="POST" style="display:inline;">
+                                    <button type="submit">Hapus</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p>Tidak ada URL di database.</p>
+        <% } %>
+        <a href="/">Kembali ke Halaman Utama</a>
+    </div>
+</body>
+</html>

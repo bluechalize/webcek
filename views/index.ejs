@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Utama - Cek Situs Web</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header dengan Logo -->
+        <header>
+            <img src="/images/logo.png" alt="Logo Aplikasi" class="logo">
+            <h1>Daftar Situs Web / Aplikasi Pemprov Kalteng</h1>
+			<h1>Bidang E-Government Diskominfosantik</h1>
+        </header>
+
+        <!-- Tombol Periksa Semua URL dan Kelola URL -->
+        <div class="actions">
+            <a href="/check-all"><button>Periksa Semua URL</button></a>
+            <a href="/manage"><button>Kelola URL</button></a>
+        </div>
+		<!-- Tombol Logout -->
+<% if (req.session && req.session.user) { %>
+    <div style="text-align: right; margin-bottom: 20px;">
+        <form action="/logout" method="POST" style="display: inline;">
+            <button type="submit" class="btn-logout">Logout</button>
+        </form>
+    </div>
+<% } %>
+
+        <!-- Daftar URL dari Database -->
+        <% if (websites.length > 0) { %>
+            <table>
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% websites.forEach((website, index) => { %>
+                        <tr>
+                            <td><%= index + 1 %></td>
+                            <td><%= website.url %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p>Tidak ada URL di database.</p>
+        <% } %>
+    </div>
+</body>
+</html>
+<%- include('partials/footer') %>

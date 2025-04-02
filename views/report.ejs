@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Status Situs Web</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <div class="container">
+	<!-- Logo -->
+        <div style="text-align: center; margin-bottom: 20px;">
+            <img src="/logo.png" alt="Logo Aplikasi" width="100">
+        </div>
+        <!-- Tombol Dashboard, Export CSV, dan Kembali ke Halaman Utama -->
+        <div style="margin-bottom: 20px;">
+            <a href="/dashboard" class="btn-dashboard">Tampilkan Diagram</a>
+            <a href="/export-csv" class="btn-export">Export Excel</a>
+			<button id="printButton" class="btn-print">Cetak / Simpan Halaman</button> <!-- Tombol Cetak -->
+            <a href="/" class="btn-back">Ke Halaman Utama</a>
+        </div>
+<script>
+    // Event listener untuk tombol cetak
+    document.getElementById('printButton').addEventListener('click', function () {
+        window.print(); // Membuka dialog cetak browser
+    });
+</script>
+        <!-- Judul Halaman -->
+        <h1>Laporan Status Situs Web</h1>
+
+        <!-- Tabel Laporan -->
+        <table border="1" cellpadding="10" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>URL</th>
+                    <th>Status</th>
+                    <th>Kode Status</th>
+                    <th>Keterangan Kode Status</th>
+                    <th>Tanggal Pengecekan</th>
+                    <th>Tanggal Terakhir Diperbarui</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% results.forEach((result, index) => { %>
+                    <tr>
+                        <td><%= index + 1 %></td>
+                        <td><%= result.url %></td>
+                        <td><%= result.status %></td>
+                        <td><%= result.statusCode %></td>
+                        <td><%= result.statusDescription %></td>
+                        <td><%= result.tanggalPengecekan %></td>
+                        <td><%= result.lastUpdatedContent %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

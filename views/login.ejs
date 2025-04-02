@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/styles.css">
+	<style>
+	/* Gaya untuk footer */
+        footer {
+            position: absolute;
+            bottom: 20px; /* Jarak dari bawah halaman */
+            left: 50%; /* Pusatkan secara horizontal */
+            transform: translateX(-50%); /* Geser ke tengah */
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<!-- Logo -->
+        <div style="text-align: center; margin-bottom: 20px;">
+            <img src="/logo.png" alt="Logo Aplikasi" width="100">
+        </div>
+    <div class="container">
+        <h1>Selamat Datang</h1>
+		<h1>Aplikasi Web Checking Kalteng</h1>
+        <form action="/login" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <button type="submit">Login</button>
+        </form>
+        <% if (error) { %>
+            <p style="color: red;"><%= error %></p>
+        <% } %>
+    </div>
+	<!-- Footer -->
+    <footer>
+        &copy; Design by Ash-Like-Snow. All rights reserved.
+    </footer>
+</body>
+</html>
